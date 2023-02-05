@@ -11,7 +11,7 @@ login = "info@svautoz.ru"
 password = "svautoz"
 code_region = 1
 partnumber = '8521148200'
-class_man = 'febi'
+class_man = 'VARTA'
 file_name = './febi.xlsx'
 
 def get_min_zzap_price(api_key, login, password, code_region, partnumber, class_man):
@@ -27,7 +27,7 @@ def get_min_zzap_price(api_key, login, password, code_region, partnumber, class_
 def get_price_from_zzap(df):
     i = 0
     freq_array = list()
-    for part in df.MPN[:50]:
+    for part in df.MPN[30:45]:
         freq_array.append(get_min_zzap_price(api_key, login, password, code_region, part, class_man))
         i += 1
         susp_time = randint(60,120)
